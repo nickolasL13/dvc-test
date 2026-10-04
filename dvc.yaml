@@ -1,0 +1,7 @@
+stages:
+  ingest:
+    cmd: python3 src/ingest.py
+    deps:
+    - src/ingest.py
+    outs:
+    - data/raw/data.csv

@@ -1,0 +1,14 @@
+schema: '2.0'
+stages:
+  ingest:
+    cmd: python3 src/ingest.py
+    deps:
+    - path: src/ingest.py
+      hash: md5
+      md5: c3299e39e21367c969273f415cd4599d
+      size: 457
+    outs:
+    - path: data/raw/data.csv
+      hash: md5
+      md5: 2925c4a8cd201c79d97d3d283429ef23
+      size: 12261
