@@ -14,7 +14,6 @@ def ingest_data():
     df.to_csv(output_file, index=False)
     
     print(f"Data ingested and saved to {output_file}")
-    print(f"Número de registros: {len(df)}")
     
 if __name__ == "__main__":
     ingest_data()

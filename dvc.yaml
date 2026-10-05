@@ -5,3 +5,12 @@ stages:
     - src/ingest.py
     outs:
     - data/raw/data.csv
+  process:
+    cmd: python3 src/process.py
+    deps:
+    - data/raw/data.csv
+    outs:
+    - data/test/df_X_test.csv
+    - data/test/df_y_test.csv
+    - data/train/df_X_train.csv
+    - data/train/df_y_train.csv

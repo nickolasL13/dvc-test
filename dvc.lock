@@ -5,10 +5,34 @@ stages:
     deps:
     - path: src/ingest.py
       hash: md5
-      md5: c3299e39e21367c969273f415cd4599d
-      size: 457
+      md5: 7a697dff60415392ab3f10e1e5e7ffd1
+      size: 411
     outs:
     - path: data/raw/data.csv
       hash: md5
       md5: 2925c4a8cd201c79d97d3d283429ef23
       size: 12261
+  process:
+    cmd: python3 src/process.py
+    deps:
+    - path: data/raw/data.csv
+      hash: md5
+      md5: 2925c4a8cd201c79d97d3d283429ef23
+      size: 12261
+    outs:
+    - path: data/test/df_X_test.csv
+      hash: md5
+      md5: 851acd43cf394fefdb05f1e294d1f8e0
+      size: 2520
+    - path: data/test/df_y_test.csv
+      hash: md5
+      md5: 6dca6a22f70b69512b2f59bcf320d16b
+      size: 342
+    - path: data/train/df_X_train.csv
+      hash: md5
+      md5: 3b356b388664aaefdfeadfe6eecf15e8
+      size: 9457
+    - path: data/train/df_y_train.csv
+      hash: md5
+      md5: a0c96636e5e5635430d5fb163a115f1c
+      size: 1327
