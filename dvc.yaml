@@ -5,10 +5,13 @@ stages:
     - src/ingest.py
     outs:
     - data/raw/data.csv
-  process:
-    cmd: python3 src/process.py
+  prepare:
+    cmd: python3 src/prepare.py
     deps:
     - data/raw/data.csv
+    params:
+    - prepare.test_size
+    - prepare.random
     outs:
     - data/test/df_X_test.csv
     - data/test/df_y_test.csv

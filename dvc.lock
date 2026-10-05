@@ -12,13 +12,17 @@ stages:
       hash: md5
       md5: 2925c4a8cd201c79d97d3d283429ef23
       size: 12261
-  process:
-    cmd: python3 src/process.py
+  prepare:
+    cmd: python3 src/prepare.py
     deps:
     - path: data/raw/data.csv
       hash: md5
       md5: 2925c4a8cd201c79d97d3d283429ef23
       size: 12261
+    params:
+      params.yaml:
+        prepare.random: 42
+        prepare.test_size: 0.2
     outs:
     - path: data/test/df_X_test.csv
       hash: md5
